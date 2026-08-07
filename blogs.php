@@ -30,17 +30,17 @@ $posts = $stmt->fetchAll();
 
       <div class="row">
         <?php foreach ($posts as $post): ?>
-          <div class="col-lg-4 col-md-6 mb-4">
+          <div class="col-lg-6 col-md-6 mb-4">
             <a href="blogs/<?php echo htmlspecialchars($post['slug']); ?>" class="text-decoration-none text-dark">
               <div class="card h-100 shadow-sm">
                 <?php if (!empty($post['featured_image'])): ?>
                   <img src="assets/images/blog/<?php echo htmlspecialchars($post['featured_image']); ?>"
-                       class="card-img-top" style="height:200px; object-fit:cover;"
+                       class="card-img-top" style="width:100%; aspect-ratio:1200/630; object-fit:cover;"
                        alt="<?php echo htmlspecialchars($post['featured_image_alt'] ?: $post['title']); ?>">
                 <?php endif; ?>
                 <div class="card-body">
                   <p class="text-muted mb-1 small"><?php echo htmlspecialchars($post['category']); ?></p>
-                  <h2 class="h5"><?php echo htmlspecialchars($post['title']); ?></h2>
+                  <h2 class="h5 blog-card-title"><?php echo htmlspecialchars($post['title']); ?></h2>
                   <p class="text-muted"><?php echo htmlspecialchars($post['excerpt']); ?></p>
                 </div>
               </div>

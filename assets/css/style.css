@@ -2151,6 +2151,46 @@ h1 {
   font-size: 2.5rem;
 }
 
+/* Blog post/listing text has no color of its own, so it was inheriting
+   the white `body { color: #fff }` rule above and disappearing against
+   the light page background. Scope proper colors here instead of
+   touching that global rule, which other pages may depend on. */
+.blog-post-title {
+  color: #2a1a2e;
+  text-align: left;
+  font-size: 2.4rem;
+  margin: 1rem 0;
+}
+
+.blog-post-content {
+  color: #333;
+}
+
+.blog-post-content h2,
+.blog-post-content h3 {
+  color: #2a1a2e;
+}
+
+.blog-post-content a {
+  color: #ff4400;
+}
+
+.blog-card-title {
+  color: #2a1a2e;
+}
+
+.faq-block {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.faq-block h3 {
+  font-size: 1.15rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
 .accordion {
   width: 90%;
   max-width: 1000px;

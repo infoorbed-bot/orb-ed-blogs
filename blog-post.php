@@ -1,6 +1,52 @@
 <?php
 require_once __DIR__ . '/includes/db.php';
 
+function extractFaqSchema(string $html): ?array
+{
+    if (stripos($html, 'faq-block') === false) {
+        return null;
+    }
+
+    $dom = new DOMDocument();
+    libxml_use_internal_errors(true);
+    $dom->loadHTML('<?xml encoding="utf-8" ?><div>' . $html . '</div>');
+    libxml_clear_errors();
+
+    $xpath = new DOMXPath($dom);
+    $faqBlocks = $xpath->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' faq-block ')]");
+    if ($faqBlocks->length === 0) {
+        return null;
+    }
+
+    $questions = [];
+    $currentQuestion = null;
+    foreach ($faqBlocks->item(0)->childNodes as $node) {
+        if ($node->nodeName === 'h3') {
+            $currentQuestion = trim($node->textContent);
+        } elseif ($node->nodeName === 'p' && $currentQuestion !== null) {
+            $questions[] = [
+                '@type' => 'Question',
+                'name' => $currentQuestion,
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => trim($node->textContent),
+                ],
+            ];
+            $currentQuestion = null;
+        }
+    }
+
+    if (!$questions) {
+        return null;
+    }
+
+    return [
+        '@context' => 'https://schema.org',
+        '@type' => 'FAQPage',
+        'mainEntity' => $questions,
+    ];
+}
+
 $slug = isset($_GET['slug']) ? trim($_GET['slug']) : '';
 
 $stmt = $pdo->prepare("SELECT * FROM posts WHERE slug = ? AND status = 'published'");
@@ -51,6 +97,8 @@ $articleSchema = json_encode([
     ],
 ]);
 
+$faqSchema = extractFaqSchema($post['content']);
+
 include __DIR__ . '/header.php';
 ?>
 <div class="aboutpage">
@@ -60,7 +108,7 @@ include __DIR__ . '/header.php';
         <div class="col-lg-9 col-md-12 represhing m-auto">
 
           <p><a href="blogs.php">&larr; Back to Blog</a></p>
-          <h1><?php echo htmlspecialchars($post['title']); ?></h1>
+          <h1 class="blog-post-title"><?php echo htmlspecialchars($post['title']); ?></h1>
           <p class="text-muted">
             <?php echo htmlspecialchars(date('F j, Y', strtotime($post['published_at']))); ?>
             &middot; <?php echo htmlspecialchars($post['category']); ?>
@@ -69,7 +117,7 @@ include __DIR__ . '/header.php';
           <?php if (!empty($post['featured_image'])): ?>
             <img src="assets/images/blog/<?php echo htmlspecialchars($post['featured_image']); ?>"
                  alt="<?php echo htmlspecialchars($post['featured_image_alt'] ?: $post['title']); ?>"
-                 style="width:100%; max-height:420px; object-fit:cover; border-radius:8px; margin-bottom:24px;">
+                 style="width:100%; aspect-ratio:1200/630; object-fit:cover; border-radius:8px; margin-bottom:24px;">
           <?php endif; ?>
 
           <div class="blog-post-content">
@@ -82,4 +130,7 @@ include __DIR__ . '/header.php';
   </section>
 </div>
 <script type="application/ld+json"><?php echo $articleSchema; ?></script>
+<?php if ($faqSchema): ?>
+<script type="application/ld+json"><?php echo json_encode($faqSchema); ?></script>
+<?php endif; ?>
 <?php include __DIR__ . '/footer.php'; ?>
