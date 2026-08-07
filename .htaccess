@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Clean URLs for individual blog posts: /blogs/some-slug -> blog-post.php?slug=some-slug
+RewriteRule ^blogs/([a-z0-9-]+)/?$ blog-post.php?slug=$1 [L,QSA]
+
+# Serve the dynamic sitemap at the conventional /sitemap.xml URL
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
