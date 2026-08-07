@@ -5,7 +5,7 @@ $pageTitle = "Blog | Tips & Resources for O and A Level Students";
 $pageDescription = "Explore the Orb-Ed.pk blog for helpful tips, exam strategies, and resources for O & A Level students in Pakistan and worldwide. Stay informed and succeed!";
 $bodyClass = 'no-bg-image';
 
-$perPage = 9;
+$perPage = 15;
 $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
 $offset = ($page - 1) * $perPage;
 
@@ -31,7 +31,7 @@ $posts = $stmt->fetchAll();
 
       <div class="row">
         <?php foreach ($posts as $post): ?>
-          <div class="col-lg-6 col-md-6 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <a href="blogs/<?php echo htmlspecialchars($post['slug']); ?>" class="text-decoration-none text-dark">
               <div class="card h-100 shadow-sm">
                 <?php if (!empty($post['featured_image'])): ?>
@@ -40,7 +40,12 @@ $posts = $stmt->fetchAll();
                        alt="<?php echo htmlspecialchars($post['featured_image_alt'] ?: $post['title']); ?>">
                 <?php endif; ?>
                 <div class="card-body">
-                  <p class="text-muted mb-1 small"><?php echo htmlspecialchars($post['category']); ?></p>
+                  <p class="text-muted mb-1 small">
+                    <?php echo htmlspecialchars($post['category']); ?>
+                    <?php if (!empty($post['published_at'])): ?>
+                      &middot; <?php echo htmlspecialchars(date('F j, Y', strtotime($post['published_at']))); ?>
+                    <?php endif; ?>
+                  </p>
                   <h2 class="h5 blog-card-title"><?php echo htmlspecialchars($post['title']); ?></h2>
                   <p class="text-muted"><?php echo htmlspecialchars($post['excerpt']); ?></p>
                 </div>
