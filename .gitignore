@@ -3,7 +3,3 @@ config/db.php
 
 # macOS
 .DS_Store
-
-# Uploaded content (keep the directory, not its contents)
-assets/images/blog/*
-!assets/images/blog/.gitkeep
