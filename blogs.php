@@ -3,6 +3,7 @@ require_once __DIR__ . '/includes/db.php';
 
 $pageTitle = "Blog | Tips & Resources for O and A Level Students";
 $pageDescription = "Explore the Orb-Ed.pk blog for helpful tips, exam strategies, and resources for O & A Level students in Pakistan and worldwide. Stay informed and succeed!";
+$bodyClass = 'no-bg-image';
 
 $perPage = 9;
 $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
