@@ -156,7 +156,7 @@ slides.forEach(slide => {
     <section class="sec-4 sec-4-border" style="position: relative;">
     <div class="slider-left-fade"></div>
     <div class= "student-testimonial-left-section">
-        <h1 class="title-mean" data-aos="zoom-in"  onclick="console.log('click')">STUDENT <br/>TESTIMONIALSssssssss</h1>
+        <h1 class="title-mean" data-aos="zoom-in"  onclick="console.log('click')">STUDENT <br/>TESTIMONIALS</h1>
         <div class="btn-our " data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
          <a href="https://lms.orb-ed.pk/account/register" class="btn-gradient-rad" title="Registration"> <span>Registration</span></a>
         </div>
