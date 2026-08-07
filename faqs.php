@@ -1,4 +1,8 @@
-    <?php include('header.php'); ?>
+    <?php
+    $pageTitle = "FAQs | Orb-Ed O & A Level Online Learning";
+    $pageDescription = "Find answers to common questions about Orb-Ed's O & A Level courses, enrollment, tutors, and online learning platform.";
+    include('header.php');
+    ?>
     <div class="aboutpage">
 
 

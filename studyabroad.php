@@ -1,10 +1,8 @@
+<?php
+$pageTitle = "Study Abroad | Scholarships, Visa Guidance and More";
+$pageDescription = "Explore Study Abroad services at Orb-Ed.pk. We offer initial assessments, scholarship assistance, visa guidance, test prep, counselling, and more to help you succeed.";
+?>
 <div class="currentpage6">
-
-    <head>
-        <title>Study Abroad | Scholarships, Visa Guidance and More</title>
-        <meta name="description"
-            content="Explore Study Abroad services at Orb-Ed.pk. We offer initial assessments, scholarship assistance, visa guidance, test prep, counselling, and more to help you succeed..">
-    </head>
 
     <?php include('header.php'); ?>
     <div class="aboutpage">

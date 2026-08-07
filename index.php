@@ -1,10 +1,9 @@
+<?php
+$pageTitle = "O Level and A Level | Online Education at Orb-Ed.pk";
+$pageDescription = "Enroll in O Level & A Level courses with expert tutors at Orb-Ed.pk. Quality online education for students in Pakistan & worldwide. Start learning today!";
+$showPreloader = true;
+?>
 <div class="currentpage1 ">
-
-    <head>
-        <title>O Level and A Level | Online Education at Orb-Ed.pk</title>
-        <meta name="description"
-            content="Enroll in O Level & A Level courses with expert tutors at Orb-Ed.pk. Quality online education for students in Pakistan & worldwide. Start learning today!">
-    </head>
 
     <script src="assets/js/dropdown-handler.js"></script>
     <script>
@@ -156,7 +155,7 @@ slides.forEach(slide => {
     <section class="sec-4 sec-4-border" style="position: relative;">
     <div class="slider-left-fade"></div>
     <div class= "student-testimonial-left-section">
-        <h1 class="title-mean" data-aos="zoom-in"  onclick="console.log('click')">STUDENT <br/>TESTIMONIALS</h1>
+        <h2 class="title-mean" data-aos="zoom-in"  onclick="console.log('click')">STUDENT <br/>TESTIMONIALS</h2>
         <div class="btn-our " data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
          <a href="https://lms.orb-ed.pk/account/register" class="btn-gradient-rad" title="Registration"> <span>Registration</span></a>
         </div>
@@ -168,7 +167,7 @@ slides.forEach(slide => {
         >
             <div class="row">
                 <!-- <div class="col-lg-6 col-md-6  m-auto">
-                    <h1 class="title-mean" data-aos="zoom-in"  onclick="console.log('click')">STUDENT TESTIMONIALS</h1>
+                    <h2 class="title-mean" data-aos="zoom-in"  onclick="console.log('click')">STUDENT TESTIMONIALS</h2>
                     <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"></p>
                     <div class="btn-our " data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                         <a href="https://lms.orb-ed.pk/account/register" class="btn-gradient-rad" title="Registration"> <span>Registration</span></a>
@@ -239,8 +238,8 @@ slides.forEach(slide => {
 
     <section class="sec-2">
         <div class="container-1500">
-            <h1 class="title-mean " data-aos="zoom-in">Learn <span>|</span> Solve <span>|</span> Engage <br>
-                Revise <span>|</span> Prep </h1>
+            <h2 class="title-mean " data-aos="zoom-in">Learn <span>|</span> Solve <span>|</span> Engage <br>
+                Revise <span>|</span> Prep </h2>
 
             <div class="row">
             <div class="col-lg-9 col-md-9 video-div" data-aos="fade-up" data-aos-duration="3000">
@@ -429,7 +428,7 @@ slides.forEach(slide => {
             <div class="row">
                 <div class="col-lg-6 col-md-6 m-auto ">
                     <div class="demo-sec-1">
-                        <h1 class="" data-aos="zoom-in">Request A Free Demo!</h1>
+                        <h2 class="" data-aos="zoom-in">Request A Free Demo!</h2>
                         <div class="refreshing-input animate__animated animate__fadeInLeftBig">
                             <input type="text" placeholder="YOUR EMAIL">
                             <i class="fa-solid fa-envelope fa-bounce"></i>
@@ -451,7 +450,7 @@ slides.forEach(slide => {
 
     <section class="sec-2">
         <div class="container-1500">
-            <h1 class="title-mean " data-aos="zoom-in">WHAT WE OFFER</h1>
+            <h2 class="title-mean " data-aos="zoom-in">WHAT WE OFFER</h2>
         </div>
     </section>
 
@@ -649,7 +648,7 @@ slides.forEach(slide => {
 
     <section class="sec-2">
         <div class="container-1500">
-            <h1 class="title-mean " data-aos="zoom-in">WHY IS ORB-ED RIGHT FOR ME</h1>
+            <h2 class="title-mean " data-aos="zoom-in">WHY IS ORB-ED RIGHT FOR ME</h2>
         </div>
     </section>
 
@@ -660,7 +659,7 @@ slides.forEach(slide => {
         <div class="container-1500">
             <div class="row">
                 <div class="col-lg-6 col-md-6  m-auto">
-                    <h1 class="title-mean" data-aos="zoom-in">LEARN. </h1>
+                    <h2 class="title-mean" data-aos="zoom-in">LEARN. </h2>
                     <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">Quality videos. Great notes. Made by
                         instructional designers
                         with decades of experience.</p>
@@ -707,7 +706,7 @@ slides.forEach(slide => {
                     <img src="assets/images/tab-mob.png" alt="">
                 </div>
                 <div class="col-lg-6 col-md-6 m-auto">
-                    <h1 class="title-mean" data-aos="zoom-in">SOLVE. </h1>
+                    <h2 class="title-mean" data-aos="zoom-in">SOLVE. </h2>
                     <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">Don’t just know a concept, master it
                         with skill checks and
                         worksheets.</p>
@@ -746,7 +745,7 @@ slides.forEach(slide => {
         <div class="container-1500">
             <div class="row">
                 <div class="col-lg-6 col-md-6  m-auto">
-                    <h1 class="title-mean" data-aos="zoom-in">REVISE. </h1>
+                    <h2 class="title-mean" data-aos="zoom-in">REVISE. </h2>
                     <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"></p>
 
                     <div class="learn ">
@@ -830,7 +829,7 @@ slides.forEach(slide => {
 
     <!-- <section class="sec-6">
 
-        <h1 class="title-mean" data-aos="zoom-in">STUDENT TESTIMONIALS</h1>
+        <h2 class="title-mean" data-aos="zoom-in">STUDENT TESTIMONIALS</h2>
         <div class="container-1500">
 
             <div class="testimonial autoplay">

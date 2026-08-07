@@ -209,26 +209,18 @@
 document.addEventListener(
   "DOMContentLoaded",
   function() {
-    setTimeout(function() {    document.getElementById("loading").className = "slideDown";
-    }, 3800);
-  },
-  false
-);
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
+    var loadingCenter = document.getElementById("loading-center");
+    var loading = document.getElementById("loading");
+    var block1 = document.getElementById("block-1");
+    if (!loading || !loadingCenter || !block1) return;
+
     setTimeout(function() {
-      document.getElementById("loading-center").className = "zoomOut";
-    }, 3200);
-  },
-  false
-);
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
+      loadingCenter.className = "zoomOut";
+    }, 350);
     setTimeout(function() {
-      document.getElementById("block-1").className = "slideInUp";
-    }, 3800);
+      loading.className = "slideDown";
+      block1.className = "slideInUp";
+    }, 500);
   },
   false
 );

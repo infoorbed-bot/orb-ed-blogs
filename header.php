@@ -1,3 +1,10 @@
+<?php
+$pageTitle = $pageTitle ?? 'Online O & A Level Courses | Study Smarter with Orb-Ed';
+$pageDescription = $pageDescription ?? "Boost your O & A Level studies with Orb-Ed's comprehensive lectures, course bundles and exam tips. Your path to academic success starts here!";
+$showPreloader = $showPreloader ?? false;
+$currentScript = basename($_SERVER['SCRIPT_NAME']);
+$pageCanonical = $pageCanonical ?? ('https://orb-ed.pk/' . ($currentScript === 'index.php' ? '' : $currentScript));
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,13 +13,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="image" content="https://orb-ed.pk/assets/images/orbed-logo.png">
-  <title>Online O & A Level Courses | Study Smarter with Orb-Ed</title>
-  <meta name="description" content="Boost your O & A Level studies with Orb-Ed's comprehensive lectures, course bundles and exam tips. Your path to academic success starts here!">
-<link rel="canonical" href="https://orb-ed.pk/" />
-<meta property="og:title" content="Online O & A Level Courses | Study Smarter with Orb-Ed" />
-<meta property="og:description" content="Boost your O & A Level studies with Orb-Ed's comprehensive lectures, course bundles and exam tips." />
+  <title><?php echo htmlspecialchars($pageTitle); ?></title>
+  <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
+<link rel="canonical" href="<?php echo htmlspecialchars($pageCanonical); ?>" />
+<meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>" />
+<meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
 <meta property="og:image" content="https://orb-ed.pk/assets/images/orbed-logo.png" />
-<meta property="og:url" content="https://orb-ed.pk/" />
+<meta property="og:url" content="<?php echo htmlspecialchars($pageCanonical); ?>" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Orb-Ed",
+  "url": "https://orb-ed.pk/",
+  "logo": "https://orb-ed.pk/assets/images/orbed-logo.png",
+  "sameAs": []
+}
+</script>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -68,6 +85,7 @@
 
   <main>
 
+    <?php if ($showPreloader): ?>
     <div class="res-container">
       <div class="res-row">
         <div id="block-1 b3">
@@ -94,8 +112,9 @@
         </div>
       </div>
     </div>
+    <?php endif; ?>
 
-    
+
     <div class="main-body ">
 
 

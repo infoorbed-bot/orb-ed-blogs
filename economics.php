@@ -1,5 +1,9 @@
 <div class="currentpage3">
-    <?php include('header.php'); ?>
+    <?php
+    $pageTitle = "Economics O & A Level Course | Orb-Ed";
+    $pageDescription = "Learn Economics for O & A Level with Orb-Ed's expert-led video lectures, notes, and past papers. Build strong foundations and exam confidence.";
+    include('header.php');
+    ?>
     <div class="aboutpage">
 
         <section class="course-sec1">

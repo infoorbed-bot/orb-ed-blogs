@@ -33,7 +33,11 @@ $seo_og_image  = "https://orb-ed.pk/assets/images/bannercontact.png";
 
 <div class="currentpage5">
 
-    <?php include('header.php'); ?>
+    <?php
+    $pageTitle = "Contact Us | Orb-Ed O & A Level Online Learning";
+    $pageDescription = "Get in touch with Orb-Ed for questions about O & A Level courses, enrollment, or support. We're here to help you succeed.";
+    include('header.php');
+    ?>
     <div class="aboutpage">
 
         <div class="smoke-section-parent">

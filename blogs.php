@@ -1,10 +1,8 @@
+<?php
+$pageTitle = "Blog | Tips & Resources for O and A Level Students";
+$pageDescription = "Explore the Orb-Ed.pk blog for helpful tips, exam strategies, and resources for O & A Level students in Pakistan and worldwide. Stay informed and succeed!";
+?>
 <div class="currentpage4 ">
-
-  <head>
-    <title>Blog | Tips & Resources for O and A Level Students</title>
-    <meta name="description"
-      content="Explore the Orb-Ed.pk blog for helpful tips, exam strategies, and resources for O & A Level students in Pakistan and worldwide. Stay informed and succeed!">
-  </head>
 
   <?php include('header.php'); ?>
   <div class=" blogPage">

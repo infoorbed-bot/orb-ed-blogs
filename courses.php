@@ -1,8 +1,8 @@
+<?php
+$pageTitle = "O and A Level Courses | Online Classes for All Subjects";
+$pageDescription = "Explore O Level & A Level courses at Orb-Ed.pk. Expert tutors, interactive lessons, and flexible online learning for students in Pakistan and worldwide. Enroll today!";
+?>
 <div class="currentpage3">
-  <head>
-        <title>O and A Level Courses | Online Classes for All Subjects</title>
-        <meta name="description" content="Explore O Level & A Level courses at Orb-Ed.pk. Expert tutors, interactive lessons, and flexible online learning for students in Pakistan and worldwide. Enroll today!">
-  </head>
   <?php include('header.php'); ?>
   <div class="courpage">
     <section class="course-sec1">

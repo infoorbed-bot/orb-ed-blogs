@@ -1,6 +1,10 @@
 <div class="aboutpage ">
 
-<?php include('header.php'); ?>
+<?php
+$pageTitle = "Terms and Conditions | Orb-Ed";
+$pageDescription = "Read Orb-Ed's terms and conditions for using our O & A Level online learning platform and services.";
+include('header.php');
+?>
 <div class=" blogPage">
 
 <div class="row">

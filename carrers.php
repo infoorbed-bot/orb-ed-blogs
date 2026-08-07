@@ -1,5 +1,9 @@
 
-    <?php include('header.php'); ?>
+    <?php
+    $pageTitle = "Careers | Join the Orb-Ed Team";
+    $pageDescription = "Explore career opportunities at Orb-Ed. Apply to join our team and help shape the future of O & A Level online education.";
+    include('header.php');
+    ?>
     <div class="aboutpage carrers">
 
 
