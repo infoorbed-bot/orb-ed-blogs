@@ -54,6 +54,7 @@ $stmt->execute([$slug]);
 $post = $stmt->fetch();
 
 $pageBase = 'https://orb-ed.pk/';
+$bodyClass = 'no-bg-image';
 
 if (!$post) {
     http_response_code(404);

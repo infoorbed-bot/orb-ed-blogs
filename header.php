@@ -114,7 +114,7 @@ $pageCanonical = $pageCanonical ?? ('https://orb-ed.pk/' . ($currentScript === '
     <?php endif; ?>
 
 
-    <div class="main-body ">
+    <div class="main-body <?php echo !empty($bodyClass) ? htmlspecialchars($bodyClass) : ''; ?>">
 
 
       <div class="livechat">

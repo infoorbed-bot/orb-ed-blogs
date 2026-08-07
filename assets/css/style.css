@@ -2156,27 +2156,36 @@ h1 {
    the light page background. Scope proper colors here instead of
    touching that global rule, which other pages may depend on. */
 .blog-post-title {
-  color: #2a1a2e;
+  color: #6d006c !important;
   text-align: left;
   font-size: 2.4rem;
   margin: 1rem 0;
 }
 
 .blog-post-content {
-  color: #333;
+  color: #333 !important;
 }
 
 .blog-post-content h2,
 .blog-post-content h3 {
-  color: #2a1a2e;
+  color: #6d006c !important;
+}
+
+.blog-post-content p,
+.blog-post-content li {
+  color: #333 !important;
 }
 
 .blog-post-content a {
-  color: #ff4400;
+  color: #ff4400 !important;
 }
 
 .blog-card-title {
-  color: #2a1a2e;
+  color: #2a1a2e !important;
+}
+
+.main-body.no-bg-image {
+  background-image: none;
 }
 
 .faq-block {
