@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/csrf.php';
+require_once __DIR__ . '/includes/remember.php';
 
 if (!empty($_SESSION['admin_id'])) {
     header('Location: posts.php');
@@ -23,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_regenerate_id(true);
         $_SESSION['admin_id'] = $user['id'];
         $_SESSION['admin_username'] = $username;
+        remember_create($pdo, (int) $user['id']);
         header('Location: posts.php');
         exit;
     }
