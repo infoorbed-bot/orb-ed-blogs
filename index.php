@@ -58,7 +58,7 @@ slides.forEach(slide => {
         <div class="smoke-section-parent">
             <div class="ag-smoke-block">
                 <div>
-                    <img class="ag-smoke-1" src="assets/images/sky.png" alt="Smoke">
+                    <img class="ag-smoke-1" src="assets/images/sky.png" alt="">
                 </div>
             </div>
         </div>
@@ -101,36 +101,36 @@ slides.forEach(slide => {
                     </div> -->
 
                     <div class= "mob-img" style= "position: absolute; top: 50%; left: 25%; z-index: 0">
-                        <img src= "assets/images/banner-circle-1.png"/>
+                        <img src= "assets/images/banner-circle-1.png" alt=""/>
                     </div>
                     <div class="scrolling-columns-container">
                       <div class="column">
                         <div class="scroll-items">
-                          <div class="scroll-item"><img src="assets/images/banner1.png" alt="Image 1"></div>
-                          <div class="scroll-item"><img src="assets/images/banner4.png" alt="Image 2"></div>
-                          <div class="scroll-item"><img src="assets/images/banner1.png" alt="Image 1"></div>
-                          <div class="scroll-item"><img src="assets/images/banner4.png" alt="Image 2"></div>
+                          <div class="scroll-item"><img src="assets/images/banner1.png" alt="Orb-Ed student — Distinctions in Business Studies"></div>
+                          <div class="scroll-item"><img src="assets/images/banner4.png" alt="Orb-Ed student success story"></div>
+                          <div class="scroll-item"><img src="assets/images/banner1.png" alt="Orb-Ed student — Distinctions in Business Studies"></div>
+                          <div class="scroll-item"><img src="assets/images/banner4.png" alt="Orb-Ed student success story"></div>
                         </div>
                       </div>
                       <div class="column">
                         <div class="scroll-items scroll-items-down">
-                        <div class="scroll-item"><img src="assets/images/banner2.png" alt="Image 1"></div>
-                          <div class="scroll-item"><img src="assets/images/razajafri.png" alt="Image 5"></div>
-                          <div class="scroll-item"><img src="assets/images/banner2.png" alt="Image 1"></div>
-                          <div class="scroll-item"><img src="assets/images/razajafri.png" alt="Image 4"></div>
+                        <div class="scroll-item"><img src="assets/images/banner2.png" alt="Orb-Ed student success story"></div>
+                          <div class="scroll-item"><img src="assets/images/razajafri.png" alt="Orb-Ed student success story"></div>
+                          <div class="scroll-item"><img src="assets/images/banner2.png" alt="Orb-Ed student success story"></div>
+                          <div class="scroll-item"><img src="assets/images/razajafri.png" alt="Orb-Ed student success story"></div>
                         </div>
                       </div>
                       <div class="column">
                         <div class="scroll-items">
-                        <div class="scroll-item"><img src="assets/images/banner3.png" alt="Image 1"></div>
-                          <div class="scroll-item"><img src="assets/images/banner5.png" alt="Image 2"></div>
-                          <div class="scroll-item"><img src="assets/images/banner3.png" alt="Image 1"></div>
-                          <div class="scroll-item"><img src="assets/images/banner5.png" alt="Image 2"></div>
+                        <div class="scroll-item"><img src="assets/images/banner3.png" alt="Orb-Ed student success story"></div>
+                          <div class="scroll-item"><img src="assets/images/banner5.png" alt="Orb-Ed student success story"></div>
+                          <div class="scroll-item"><img src="assets/images/banner3.png" alt="Orb-Ed student success story"></div>
+                          <div class="scroll-item"><img src="assets/images/banner5.png" alt="Orb-Ed student success story"></div>
                         </div>
                       </div>
                     </div>
                     <div class= "mob-img" style= "position: absolute; top: 20%; right: -50px; z-index: 2">
-                        <img src= "assets/images/banner-circle-2.png"/>
+                        <img src= "assets/images/banner-circle-2.png" alt=""/>
                     </div>
 
                     <!-- <div class="scrolling-columns-container">
@@ -180,38 +180,38 @@ slides.forEach(slide => {
                     <div class="testimonials-section owl-carousel owl-theme">
                         <div class="testimonial down">
                                 <div class="media-container">
-                                    <img src="assets/images/ali.png" class="thumb" />
+                                    <img src="assets/images/ali.png" class="thumb" alt="Ali Akhtar, Orb-Ed student — video testimonial" />
                                     <video src="https://orbed-lms-files.techsol360.com/assets/website/2025/Ali%20Akhtar.mp4" class="video" playsinline></video>
                                 </div>
                             </div>
                             <div class="testimonial">
                                 <div class="media-container">
-                                    <img src="assets/images/sameer.png" class="thumb" />
+                                    <img src="assets/images/sameer.png" class="thumb" alt="Sameer, Orb-Ed student — video testimonial" />
                                     <video src="https://orbed-lms-files.techsol360.com/assets/website/2025/sameer.mp4" class="video" playsinline></video>
                                 </div>
                             </div>
 
                             <div class="testimonial down">
                                 <div class="media-container">
-                                    <img src="assets/images/zamra.png" class="thumb" />
+                                    <img src="assets/images/zamra.png" class="thumb" alt="Zamra Irfan, Orb-Ed student — video testimonial" />
                                     <video src="https://orbed-lms-files.techsol360.com/assets/website/2025/Zamra%20Irfan.mp4" class="video" playsinline></video>
                                 </div>
                             </div>
                             <div class="testimonial">
                                 <div class="media-container">
-                                    <img src="assets/images/ArsalanAhmed.png" class="thumb" />
+                                    <img src="assets/images/ArsalanAhmed.png" class="thumb" alt="Arsalan Ahmed, Orb-Ed student — video testimonial" />
                                     <video src="https://orbed-lms-files.techsol360.com/assets/website/2025/Arsalan%20Ahmed%201.mp4" class="video" playsinline></video>
                                 </div>
                             </div>
                             <div class="testimonial down">
                                 <div class="media-container">
-                                    <img src="assets/images/Mahnoor.png" class="thumb" />
+                                    <img src="assets/images/Mahnoor.png" class="thumb" alt="Mahnoor, Orb-Ed student — video testimonial" />
                                     <video src="https://orbed-lms-files.techsol360.com/assets/website/2025/Mahnoor.mp4" class="video" playsinline></video>
                                 </div>
                             </div>
                             <div class="testimonial down">
                                 <div class="media-container">
-                                    <img src="assets/images/NabihahSalman.png" class="thumb" />
+                                    <img src="assets/images/NabihahSalman.png" class="thumb" alt="Nabihah Salman, Orb-Ed student — video testimonial" />
                                     <video src="https://orbed-lms-files.techsol360.com/assets/website/2025/Nabihah%20Salman.mp4" class="video" playsinline></video>
                                 </div>
                             </div>
@@ -245,7 +245,7 @@ slides.forEach(slide => {
             <div class="col-lg-9 col-md-9 video-div" data-aos="fade-up" data-aos-duration="3000">
                 <div class="videoCoverImage">
                     <div id="video-thumbnail" onclick="loadVideo('https://orbed-lms-files.techsol360.com/assets/website/2025/sir%20zarak%2001-.mp4')">
-                        <img width="100%" class="thumb" style="cursor: pointer;" src="assets/images/May-June.jpg">
+                        <img width="100%" class="thumb" style="cursor: pointer;" src="assets/images/May-June.jpg" alt="May/June exam series revision video">
                     </div>
                     <div id="thevideo" style="display: none;">
                         <iframe id="main-video-frame" width="100%" frameborder="0" allowfullscreen></iframe>
@@ -256,7 +256,7 @@ slides.forEach(slide => {
                 <div class="col-lg-3 col-md-3 video-div" data-aos="fade-up" data-aos-duration="3000" style="max-height: 635; overflow-y: auto;">
                     <div class="videoCoverImage" style="margin-bottom: 10px;">
                         <div onclick="loadVideo('https://orbed-lms-files.techsol360.com/assets/website/2025/sir%20zarak%2003.mp4')">
-                            <img width="100%" class="thumb" src="assets/images/Oct-Nov.png" alt="Video-Thumbnail">
+                            <img width="100%" class="thumb" src="assets/images/Oct-Nov.png" alt="Oct/Nov exam series revision video">
                         </div>
                         <div style="display: none;">
                             <iframe width="100%"
@@ -266,7 +266,7 @@ slides.forEach(slide => {
                     </div>
                     <div class="videoCoverImage" style="margin-bottom: 10px;">
                         <div onclick="loadVideo('https://orbed-lms-files.techsol360.com/assets/website/2025/sir%20zarak%2004.mp4')">
-                            <img width="100%" class="thumb" src="assets/images/O-Level-VT.jpg" alt="Video-Thumbnail">
+                            <img width="100%" class="thumb" src="assets/images/O-Level-VT.jpg" alt="O Level revision video">
                         </div>
                         <div style="display: none;">
                             <iframe width="100%"
@@ -276,7 +276,7 @@ slides.forEach(slide => {
                     </div>
                     <div class="videoCoverImage" style="margin-bottom: 10px;">
                         <div onclick="loadVideo('https://orbed-lms-files.techsol360.com/assets/website/2025/sir%20zarak%2005.mp4')">
-                            <img width="100%" class="thumb" src="assets/images/A-Level-VT.jpg" alt="Video-Thumbnail">
+                            <img width="100%" class="thumb" src="assets/images/A-Level-VT.jpg" alt="A Level revision video">
                         </div>
                         <div style="display: none;">
                             <iframe width="100%"
@@ -286,7 +286,7 @@ slides.forEach(slide => {
                     </div>
                     <div class="videoCoverImage" style="margin-bottom: 10px;">
                         <div onclick="loadVideo('https://orbed-lms-files.techsol360.com/assets/website/2025/sir%20zarak%2006.mp4')">
-                            <img width="100%" class="thumb" src="assets/images/AS-Level-VT.jpg" alt="Video-Thumbnail">
+                            <img width="100%" class="thumb" src="assets/images/AS-Level-VT.jpg" alt="AS Level revision video">
                         </div>
                         <div style="display: none;">
                             <iframe width="100%"
@@ -321,7 +321,7 @@ slides.forEach(slide => {
                         <a href="blogs.php">
                             <div class="box">
                                 <div class="imgDiv">
-                                    <img alt="crypto" height="100%" src="assets/images/blogs/Blog1.jpg">
+                                    <img alt="Stepping Into A Level? Here's How Orb-Ed Can Help" height="100%" src="assets/images/blogs/Blog1.jpg">
                                 </div>
                                 <div class="box-textP">
                                     <p>Stepping Into A Level? Here's How Orb-Ed Can Help</p>
@@ -336,7 +336,7 @@ slides.forEach(slide => {
                         <a href="blogs.php">
                             <div class="box">
                                 <div class="imgDiv">
-                                    <img alt="crypto" height="100%" src="assets/images/blogs/Blog2.jpg">
+                                    <img alt="5 Reasons Why Orb-Ed Is The Best Learning Partner" height="100%" src="assets/images/blogs/Blog2.jpg">
                                 </div>
                                 <div class="box-textP">
                                     <p>5 Reasons Why Orb-Ed Is The Best Learning Partner</p>
@@ -351,7 +351,7 @@ slides.forEach(slide => {
                         <a href="blogs.php">
                             <div class="box">
                                 <div class="imgDiv">
-                                    <img alt="crypto" height="100%" src="assets/images/blogs/Blog3.jpg">
+                                    <img alt="Unveiling the Advantages of E-Learning" height="100%" src="assets/images/blogs/Blog3.jpg">
                                 </div>
                                 <div class="box-textP">
                                     <p>Unveiling the Advantages of E-Learning</p>
@@ -366,7 +366,7 @@ slides.forEach(slide => {
                         <a href="blogs.php">
                             <div class="box">
                                 <div class="imgDiv">
-                                    <img alt="crypto" height="100%" src="assets/images/blogs/Blog4.jpg">
+                                    <img alt="The Power of 24/7 Tutor Support & Non-Stop Learning" height="100%" src="assets/images/blogs/Blog4.jpg">
                                 </div>
                                 <div class="box-textP">
                                     <p>The Power of 24/7 Tutor Support & non-stop learning</p>
@@ -398,7 +398,7 @@ slides.forEach(slide => {
                 <div class="mt-5 col-lg-6 col-md-6 m-auto">
                     <div class="video-div ab" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                         <div class="videoCoverImage">
-                            <img src="assets/images/OLevelMaths.png" alt="">
+                            <img src="assets/images/OLevelMaths.png" alt="O Level Maths course preview">
                         </div>
                     </div>
                 </div>
@@ -417,7 +417,7 @@ slides.forEach(slide => {
                     </p>
                 </div>
                 <div class="col-lg-6  col-md-6 mob-img">
-                    <img src="assets/images/bannerdevices.png" alt="">
+                    <img src="assets/images/bannerdevices.png" alt="Orb-Ed learning platform on laptop and mobile">
                 </div>
             </div>
         </div>
@@ -440,7 +440,7 @@ slides.forEach(slide => {
                 <div class="col-lg-6  col-md-6 m-auto">
                     <div class="video-div ab" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                         <div class="videoCoverImage">
-                            <img src="assets/images/bannerDemo.png" alt="">
+                            <img src="assets/images/bannerDemo.png" alt="Request a free Orb-Ed demo">
                         </div>
                     </div>
                 </div>
@@ -638,7 +638,7 @@ slides.forEach(slide => {
                 <div class="col-lg-6  col-md-6 m-auto">
                     <div class="video-div ab" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                         <div class="videoCoverImage">
-                            <img src="assets/images/bannerGirl.png" alt="">
+                            <img src="assets/images/bannerGirl.png" alt="Orb-Ed student saving on past papers and coursebooks">
                         </div>
                     </div>
                 </div>
@@ -690,7 +690,7 @@ slides.forEach(slide => {
 
 
                 <div class="col-lg-6  col-md-6 mob-img">
-                    <img src="assets/images/grdnt-bg-mob.png" alt="">
+                    <img src="assets/images/grdnt-bg-mob.png" alt="Handwritten Orb-Ed subject notes on mobile">
                 </div>
             </div>
         </div>
@@ -703,7 +703,7 @@ slides.forEach(slide => {
 
 
                 <div class="col-lg-6 col-md-6 mob-img">
-                    <img src="assets/images/tab-mob.png" alt="">
+                    <img src="assets/images/tab-mob.png" alt="Solved past paper answer key on tablet and phone">
                 </div>
                 <div class="col-lg-6 col-md-6 m-auto">
                     <h2 class="title-mean" data-aos="zoom-in">SOLVE. </h2>
@@ -776,7 +776,7 @@ slides.forEach(slide => {
                 </div>
 
                 <div class="col-lg-6  col-md-6 mob-img">
-                    <img src="assets/images/revisionbanner.png" alt="">
+                    <img src="assets/images/revisionbanner.png" alt="Orb-Ed student preparing with revision guides">
                 </div>
             </div>
         </div>
@@ -955,7 +955,7 @@ slides.forEach(slide => {
                         <a href="blogs.php">
                             <div class="box">
                                 <div class="imgDiv">
-                                    <img alt="crypto" height="100%" src="assets/images/blogs/Blog1.jpg">
+                                    <img alt="Stepping Into A Level? Here's How Orb-Ed Can Help" height="100%" src="assets/images/blogs/Blog1.jpg">
                                 </div>
                                 <div class="box-textP">
                                     <p>Stepping Into A Level? Here's How Orb-Ed Can Help</p>
@@ -970,7 +970,7 @@ slides.forEach(slide => {
                         <a href="blogs.php">
                             <div class="box">
                                 <div class="imgDiv">
-                                    <img alt="crypto" height="100%" src="assets/images/blogs/Blog2.jpg">
+                                    <img alt="5 Reasons Why Orb-Ed Is The Best Learning Partner" height="100%" src="assets/images/blogs/Blog2.jpg">
                                 </div>
                                 <div class="box-textP">
                                     <p>5 Reasons Why Orb-Ed Is The Best Learning Partner</p>
@@ -985,7 +985,7 @@ slides.forEach(slide => {
                         <a href="blogs.php">
                             <div class="box">
                                 <div class="imgDiv">
-                                    <img alt="crypto" height="100%" src="assets/images/blogs/Blog3.jpg">
+                                    <img alt="Unveiling the Advantages of E-Learning" height="100%" src="assets/images/blogs/Blog3.jpg">
                                 </div>
                                 <div class="box-textP">
                                     <p>Unveiling the Advantages of E-Learning</p>
@@ -1000,7 +1000,7 @@ slides.forEach(slide => {
                         <a href="blogs.php">
                             <div class="box">
                                 <div class="imgDiv">
-                                    <img alt="crypto" height="100%" src="assets/images/blogs/Blog4.jpg">
+                                    <img alt="The Power of 24/7 Tutor Support & Non-Stop Learning" height="100%" src="assets/images/blogs/Blog4.jpg">
                                 </div>
                                 <div class="box-textP">
                                     <p>The Power of 24/7 Tutor Support & non-stop learning</p>

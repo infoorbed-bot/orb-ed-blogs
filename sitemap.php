@@ -10,7 +10,7 @@ $staticPages = [
     ['loc' => 'https://orb-ed.pk/contact.php', 'changefreq' => 'monthly', 'priority' => '0.7'],
     ['loc' => 'https://orb-ed.pk/studyabroad.php', 'changefreq' => 'monthly', 'priority' => '0.8'],
     ['loc' => 'https://orb-ed.pk/faqs.php', 'changefreq' => 'monthly', 'priority' => '0.6'],
-    ['loc' => 'https://orb-ed.pk/carrers.php', 'changefreq' => 'monthly', 'priority' => '0.5'],
+    ['loc' => 'https://orb-ed.pk/careers.php', 'changefreq' => 'monthly', 'priority' => '0.5'],
     ['loc' => 'https://orb-ed.pk/terms.php', 'changefreq' => 'yearly', 'priority' => '0.4'],
     ['loc' => 'https://orb-ed.pk/economics.php', 'changefreq' => 'monthly', 'priority' => '0.7'],
 ];

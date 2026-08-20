@@ -28,7 +28,7 @@
 
 
                     <div class="col-lg-12 m-auto">
-                        <h1 class="title-mean" data-aos="zoom-in"><img src="assets/images/carrers.png" alt="">
+                        <h1 class="title-mean" data-aos="zoom-in"><img src="assets/images/carrers.png" alt="Careers at Orb-Ed">
                         </h1>
 
 

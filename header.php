@@ -1,6 +1,7 @@
 <?php
 $pageTitle = $pageTitle ?? 'Online O & A Level Courses | Study Smarter with Orb-Ed';
 $pageDescription = $pageDescription ?? "Boost your O & A Level studies with Orb-Ed's comprehensive lectures, course bundles and exam tips. Your path to academic success starts here!";
+$pageImage = $pageImage ?? 'https://orb-ed.pk/assets/images/orbed-logo.png';
 $showPreloader = $showPreloader ?? false;
 $currentScript = basename($_SERVER['SCRIPT_NAME']);
 $pageCanonical = $pageCanonical ?? ('https://orb-ed.pk/' . ($currentScript === 'index.php' ? '' : $currentScript));
@@ -19,10 +20,15 @@ $pageCanonical = $pageCanonical ?? ('https://orb-ed.pk/' . ($currentScript === '
   <title><?php echo htmlspecialchars($pageTitle); ?></title>
   <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
 <link rel="canonical" href="<?php echo htmlspecialchars($pageCanonical); ?>" />
+<meta property="og:type" content="website" />
 <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>" />
 <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
-<meta property="og:image" content="https://orb-ed.pk/assets/images/orbed-logo.png" />
+<meta property="og:image" content="<?php echo htmlspecialchars($pageImage); ?>" />
 <meta property="og:url" content="<?php echo htmlspecialchars($pageCanonical); ?>" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>" />
+<meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
+<meta name="twitter:image" content="<?php echo htmlspecialchars($pageImage); ?>" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -93,7 +99,7 @@ $pageCanonical = $pageCanonical ?? ('https://orb-ed.pk/' . ($currentScript === '
               <div id="loading-center">
                 <div id="loading-center-absolute">
                   <div class="header-logo">
-                    <i class="fa-beat">    <img src="assets/images/orbed-logo.png" alt=""></i>
+                    <i class="fa-beat">    <img src="assets/images/orbed-logo.png" alt="Orb-Ed logo"></i>
                   </div>
                   <div id="object"></div>
                   <div id="loader"></div>
@@ -136,7 +142,7 @@ $pageCanonical = $pageCanonical ?? ('https://orb-ed.pk/' . ($currentScript === '
               <div class="destop-menus">
 
                 <div class="logo-header">
-                  <img src="assets/images/orbed-logo.png" alt="">
+                  <img src="assets/images/orbed-logo.png" alt="Orb-Ed logo">
                 </div>
 
                 <ul>
@@ -161,7 +167,7 @@ $pageCanonical = $pageCanonical ?? ('https://orb-ed.pk/' . ($currentScript === '
           <div class="destop-menus">
 
             <div class="logo-header">
-              <img src="assets/images/orbed-logo.png" alt="">
+              <img src="assets/images/orbed-logo.png" alt="Orb-Ed logo">
             </div>
         
 

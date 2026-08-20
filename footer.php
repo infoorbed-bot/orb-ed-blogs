@@ -2,7 +2,7 @@
       <div class="container-1500">
         <div class="row">
           <div class="col-lg-5 col-md-5 col-12">
-            <img src="assets/images/orbed-logo.png" alt="">
+            <img src="assets/images/orbed-logo.png" alt="Orb-Ed logo">
           </div>
           <div class="col-lg-7 col-md-7 col-12 footer-mean-links">
             <div class="footer-menus">
@@ -12,7 +12,7 @@
               </ul>
               <h4><a href="index.php"></a></h4>
               <ul>
-              <li><a href="https://play.google.com/store/apps/details?id=com.orbedx&hl=en"><img style="width: 120px; height: auto;" src="assets/images/android.png" alt=""></a></li>
+              <li><a href="https://play.google.com/store/apps/details?id=com.orbedx&hl=en"><img style="width: 120px; height: auto;" src="assets/images/android.png" alt="Get it on Google Play"></a></li>
             </ul>
             </div>
 
@@ -23,7 +23,7 @@
               </ul>
               <h4><a href="aboutus.php"></a></h4>
               <ul>
-              <li><a href="https://apps.apple.com/us/app/orb-ed-x/id6504434447"><img style="width: 120px; height: auto;" src="assets/images/ios.png" alt=""></a></li>
+              <li><a href="https://apps.apple.com/us/app/orb-ed-x/id6504434447"><img style="width: 120px; height: auto;" src="assets/images/ios.png" alt="Download on the App Store"></a></li>
               </ul>
             </div>
 
@@ -31,7 +31,7 @@
             <div class="footer-menus">
               <h4><a href="courses.php">Courses</a></h4>
               <ul>
-                <li><a href="carrers.php">Careers</a></li>
+                <li><a href="careers.php">Careers</a></li>
               </ul>
             </div>
 

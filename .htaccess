@@ -1,5 +1,16 @@
 RewriteEngine On
 
+# Force a single canonical host: https://orb-ed.pk (non-www)
+RewriteCond %{HTTP_HOST} ^www\.orb-ed\.pk [NC]
+RewriteRule ^(.*)$ https://orb-ed.pk/$1 [L,R=301]
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^orb-ed\.pk [NC]
+RewriteRule ^(.*)$ https://orb-ed.pk/$1 [L,R=301]
+
+# Old misspelled careers URL -> corrected slug
+Redirect 301 /carrers.php /careers.php
+
 # Clean URLs for individual blog posts: /blogs/some-slug -> blog-post.php?slug=some-slug
 RewriteRule ^blogs/([a-z0-9-]+)/?$ blog-post.php?slug=$1 [L,QSA]
 

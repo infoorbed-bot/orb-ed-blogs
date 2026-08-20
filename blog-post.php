@@ -82,6 +82,7 @@ $pageCanonical = 'https://orb-ed.pk/blogs/' . $post['slug'];
 $articleImage = !empty($post['featured_image'])
     ? 'https://orb-ed.pk/assets/images/blog/' . $post['featured_image']
     : 'https://orb-ed.pk/assets/images/orbed-logo.png';
+$pageImage = $articleImage;
 
 $articleSchema = json_encode([
     '@context' => 'https://schema.org',
