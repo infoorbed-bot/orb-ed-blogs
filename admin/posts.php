@@ -1,23 +1,52 @@
 <?php
 require_once __DIR__ . '/includes/auth.php';
 
+$statusFilter = $_GET['status'] ?? 'all';
+if (!in_array($statusFilter, ['all', 'published', 'draft'], true)) {
+    $statusFilter = 'all';
+}
+
+$counts = $pdo->query(
+    "SELECT
+        COUNT(*) AS total,
+        SUM(status = 'published') AS published,
+        SUM(status = 'draft') AS draft
+     FROM posts"
+)->fetch();
+
 $perPage = 20;
 $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
 $offset = ($page - 1) * $perPage;
 
-$total = (int)$pdo->query('SELECT COUNT(*) FROM posts')->fetchColumn();
-$totalPages = max(1, (int)ceil($total / $perPage));
+$where = $statusFilter === 'all' ? '' : 'WHERE status = :status';
+
+$countStmt = $pdo->prepare("SELECT COUNT(*) FROM posts $where");
+if ($statusFilter !== 'all') {
+    $countStmt->bindValue(':status', $statusFilter);
+}
+$countStmt->execute();
+$total = (int) $countStmt->fetchColumn();
+$totalPages = max(1, (int) ceil($total / $perPage));
 
 $stmt = $pdo->prepare(
-    'SELECT id, title, slug, status, category, featured_image, published_at, updated_at
+    "SELECT id, title, slug, status, category, featured_image, published_at, updated_at
      FROM posts
+     $where
      ORDER BY (published_at IS NULL) ASC, published_at DESC, updated_at DESC
-     LIMIT :limit OFFSET :offset'
+     LIMIT :limit OFFSET :offset"
 );
+if ($statusFilter !== 'all') {
+    $stmt->bindValue(':status', $statusFilter);
+}
 $stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
 $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $posts = $stmt->fetchAll();
+
+function statusTabUrl(string $status): string
+{
+    return $status === 'all' ? 'posts.php' : 'posts.php?status=' . $status;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +66,23 @@ $posts = $stmt->fetchAll();
         <a href="logout.php" class="btn btn-outline-secondary">Log Out</a>
       </div>
     </div>
+    <ul class="nav nav-tabs mb-3">
+      <li class="nav-item">
+        <a class="nav-link <?php echo $statusFilter === 'all' ? 'active' : ''; ?>" href="<?php echo statusTabUrl('all'); ?>">
+          All <span class="badge bg-secondary"><?php echo (int) $counts['total']; ?></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <?php echo $statusFilter === 'published' ? 'active' : ''; ?>" href="<?php echo statusTabUrl('published'); ?>">
+          Published <span class="badge bg-success"><?php echo (int) $counts['published']; ?></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <?php echo $statusFilter === 'draft' ? 'active' : ''; ?>" href="<?php echo statusTabUrl('draft'); ?>">
+          Draft <span class="badge bg-secondary"><?php echo (int) $counts['draft']; ?></span>
+        </a>
+      </li>
+    </ul>
     <table class="table table-bordered bg-white align-middle">
       <thead>
         <tr>
@@ -91,7 +137,7 @@ $posts = $stmt->fetchAll();
     <?php if ($totalPages > 1): ?>
       <nav class="d-flex justify-content-center gap-2 my-4">
         <?php for ($p = 1; $p <= $totalPages; $p++): ?>
-          <a href="?page=<?php echo $p; ?>"
+          <a href="?page=<?php echo $p; ?><?php echo $statusFilter !== 'all' ? '&status=' . $statusFilter : ''; ?>"
              class="btn btn-sm <?php echo $p === $page ? 'btn-primary' : 'btn-outline-primary'; ?>"><?php echo $p; ?></a>
         <?php endfor; ?>
       </nav>
