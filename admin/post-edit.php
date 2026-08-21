@@ -19,10 +19,13 @@ $post = [
     'meta_title' => '',
     'meta_description' => '',
     'focus_keyword' => '',
-    'category' => 'General',
+    'category_id' => null,
+    'author_id' => null,
     'status' => 'draft',
     'published_at' => null,
 ];
+
+$categories = $pdo->query('SELECT id, name FROM categories ORDER BY name ASC')->fetchAll();
 
 if (isset($_GET['id'])) {
     $id = (int)$_GET['id'];
@@ -54,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $post['meta_title'] = trim($_POST['meta_title'] ?? '');
     $post['meta_description'] = trim($_POST['meta_description'] ?? '');
     $post['focus_keyword'] = trim($_POST['focus_keyword'] ?? '');
-    $post['category'] = trim($_POST['category'] ?? 'General');
+    $post['category_id'] = !empty($_POST['category_id']) ? (int) $_POST['category_id'] : null;
     $post['status'] = ($_POST['status'] ?? 'draft') === 'published' ? 'published' : 'draft';
 
     if ($post['title'] === '') {
@@ -122,28 +125,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if ($id > 0) {
+            // author_id is deliberately left untouched here — authorship is
+            // set once at creation and doesn't change when someone else edits the post.
             $stmt = $pdo->prepare(
                 'UPDATE posts SET title=?, slug=?, excerpt=?, content=?, featured_image=?, featured_image_alt=?,
-                 meta_title=?, meta_description=?, focus_keyword=?, category=?, status=?, published_at=?
+                 meta_title=?, meta_description=?, focus_keyword=?, category_id=?, status=?, published_at=?
                  WHERE id=?'
             );
             $stmt->execute([
                 $post['title'], $post['slug'], $post['excerpt'], $post['content'],
                 $post['featured_image'], $post['featured_image_alt'],
                 $post['meta_title'], $post['meta_description'], $post['focus_keyword'],
-                $post['category'], $post['status'], $publishedAt, $id,
+                $post['category_id'], $post['status'], $publishedAt, $id,
             ]);
         } else {
             $stmt = $pdo->prepare(
                 'INSERT INTO posts (title, slug, excerpt, content, featured_image, featured_image_alt,
-                 meta_title, meta_description, focus_keyword, category, status, published_at)
-                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
+                 meta_title, meta_description, focus_keyword, category_id, author_id, status, published_at)
+                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'
             );
             $stmt->execute([
                 $post['title'], $post['slug'], $post['excerpt'], $post['content'],
                 $post['featured_image'], $post['featured_image_alt'],
                 $post['meta_title'], $post['meta_description'], $post['focus_keyword'],
-                $post['category'], $post['status'], $publishedAt,
+                $post['category_id'], $currentUser['id'], $post['status'], $publishedAt,
             ]);
         }
 
@@ -163,9 +168,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container py-4" style="max-width: 900px;">
+  <?php include __DIR__ . '/includes/nav.php'; ?>
+  <div class="container pb-4" style="max-width: 900px;">
     <div class="d-flex justify-content-between align-items-center mb-4">
-      <h1 class="h3 mb-0"><?php echo $id > 0 ? 'Edit Post' : 'New Post'; ?></h1>
+      <div>
+        <h1 class="h3 mb-0"><?php echo $id > 0 ? 'Edit Post' : 'New Post'; ?></h1>
+        <?php if ($id > 0 && !empty($post['author_id'])): ?>
+          <?php
+            $authorStmt = $pdo->prepare('SELECT display_name, username FROM admin_users WHERE id = ?');
+            $authorStmt->execute([$post['author_id']]);
+            $author = $authorStmt->fetch();
+          ?>
+          <?php if ($author): ?>
+            <small class="text-muted">By <?php echo htmlspecialchars($author['display_name'] ?: $author['username']); ?></small>
+          <?php endif; ?>
+        <?php endif; ?>
+      </div>
       <a href="posts.php" class="btn btn-outline-secondary btn-sm">&larr; Back to Posts</a>
     </div>
 
@@ -205,7 +223,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="row mb-3">
         <div class="col-md-6">
           <label class="form-label">Featured Image (JPG/PNG/WEBP, max 2MB)</label>
-          <input type="file" name="featured_image" class="form-control" accept=".jpg,.jpeg,.png,.webp">
+          <input type="file" name="featured_image" class="form-control" accept=".jpg,.jpeg,.png,.webp"
+                 title="Recommended size: 1200 &times; 630px (matches how it's cropped on the blog listing and post page)">
+          <div class="form-text">Recommended size: <strong>1200 &times; 630px</strong> (16:9-ish) — that's the aspect ratio used everywhere it's displayed, so anything else gets cropped.</div>
           <?php if (!empty($post['featured_image'])): ?>
             <img src="../assets/images/blog/<?php echo htmlspecialchars($post['featured_image']); ?>" style="max-height:100px; margin-top:8px;" class="d-block rounded">
           <?php endif; ?>
@@ -219,11 +239,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="row mb-3">
         <div class="col-md-6">
           <label class="form-label">Category</label>
-          <select name="category" class="form-select">
-            <?php foreach (['O Level', 'A Level', 'MDCAT', 'General'] as $cat): ?>
-              <option value="<?php echo htmlspecialchars($cat); ?>" <?php echo $post['category'] === $cat ? 'selected' : ''; ?>><?php echo htmlspecialchars($cat); ?></option>
+          <select name="category_id" class="form-select">
+            <option value="">Uncategorized</option>
+            <?php foreach ($categories as $cat): ?>
+              <option value="<?php echo (int) $cat['id']; ?>" <?php echo (int) $post['category_id'] === (int) $cat['id'] ? 'selected' : ''; ?>><?php echo htmlspecialchars($cat['name']); ?></option>
             <?php endforeach; ?>
           </select>
+          <div class="form-text">Manage categories on the <a href="categories.php" target="_blank">Categories</a> page.</div>
         </div>
         <div class="col-md-6">
           <label class="form-label">Focus Keyword</label>

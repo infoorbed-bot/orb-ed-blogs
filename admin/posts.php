@@ -18,9 +18,9 @@ $perPage = 20;
 $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
 $offset = ($page - 1) * $perPage;
 
-$where = $statusFilter === 'all' ? '' : 'WHERE status = :status';
+$where = $statusFilter === 'all' ? '' : 'WHERE p.status = :status';
 
-$countStmt = $pdo->prepare("SELECT COUNT(*) FROM posts $where");
+$countStmt = $pdo->prepare("SELECT COUNT(*) FROM posts p $where");
 if ($statusFilter !== 'all') {
     $countStmt->bindValue(':status', $statusFilter);
 }
@@ -29,10 +29,14 @@ $total = (int) $countStmt->fetchColumn();
 $totalPages = max(1, (int) ceil($total / $perPage));
 
 $stmt = $pdo->prepare(
-    "SELECT id, title, slug, status, category, featured_image, published_at, updated_at
-     FROM posts
+    "SELECT p.id, p.title, p.slug, p.status, p.featured_image, p.published_at, p.updated_at,
+            c.name AS category_name,
+            COALESCE(u.display_name, u.username) AS author_name
+     FROM posts p
+     LEFT JOIN categories c ON c.id = p.category_id
+     LEFT JOIN admin_users u ON u.id = p.author_id
      $where
-     ORDER BY (published_at IS NULL) ASC, published_at DESC, updated_at DESC
+     ORDER BY (p.published_at IS NULL) ASC, p.published_at DESC, p.updated_at DESC
      LIMIT :limit OFFSET :offset"
 );
 if ($statusFilter !== 'all') {
@@ -58,13 +62,11 @@ function statusTabUrl(string $status): string
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container py-4">
+  <?php include __DIR__ . '/includes/nav.php'; ?>
+  <div class="container pb-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h1 class="h3 mb-0">Posts</h1>
-      <div>
-        <a href="post-edit.php" class="btn btn-primary">+ New Post</a>
-        <a href="logout.php" class="btn btn-outline-secondary">Log Out</a>
-      </div>
+      <a href="post-edit.php" class="btn btn-primary">+ New Post</a>
     </div>
     <ul class="nav nav-tabs mb-3">
       <li class="nav-item">
@@ -90,6 +92,7 @@ function statusTabUrl(string $status): string
           <th>Thumbnail</th>
           <th>Title</th>
           <th>Category</th>
+          <th>Author</th>
           <th>Status</th>
           <th>Published</th>
           <th></th>
@@ -108,7 +111,8 @@ function statusTabUrl(string $status): string
             <?php endif; ?>
           </td>
           <td><?php echo htmlspecialchars($post['title']); ?></td>
-          <td><?php echo htmlspecialchars($post['category']); ?></td>
+          <td><?php echo htmlspecialchars($post['category_name'] ?? 'Uncategorized'); ?></td>
+          <td><?php echo htmlspecialchars($post['author_name'] ?? '—'); ?></td>
           <td>
             <span class="badge <?php echo $post['status'] === 'published' ? 'bg-success' : 'bg-secondary'; ?>">
               <?php echo htmlspecialchars($post['status']); ?>
@@ -129,7 +133,7 @@ function statusTabUrl(string $status): string
         </tr>
         <?php endforeach; ?>
         <?php if (!$posts): ?>
-          <tr><td colspan="7" class="text-center text-muted py-4">No posts yet. Create your first one.</td></tr>
+          <tr><td colspan="8" class="text-center text-muted py-4">No posts yet. Create your first one.</td></tr>
         <?php endif; ?>
       </tbody>
     </table>

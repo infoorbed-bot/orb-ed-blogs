@@ -13,8 +13,13 @@ $total = (int)$pdo->query("SELECT COUNT(*) FROM posts WHERE status = 'published'
 $totalPages = max(1, (int)ceil($total / $perPage));
 
 $stmt = $pdo->prepare(
-    "SELECT title, slug, excerpt, featured_image, featured_image_alt, category, published_at
-     FROM posts WHERE status = 'published' ORDER BY published_at DESC LIMIT :limit OFFSET :offset"
+    "SELECT p.title, p.slug, p.excerpt, p.featured_image, p.featured_image_alt, p.published_at,
+            c.name AS category_name,
+            COALESCE(u.display_name, u.username) AS author_name
+     FROM posts p
+     LEFT JOIN categories c ON c.id = p.category_id
+     LEFT JOIN admin_users u ON u.id = p.author_id
+     WHERE p.status = 'published' ORDER BY p.published_at DESC LIMIT :limit OFFSET :offset"
 );
 $stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
 $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
@@ -41,9 +46,12 @@ $posts = $stmt->fetchAll();
                 <?php endif; ?>
                 <div class="card-body">
                   <p class="text-muted mb-1 small">
-                    <?php echo htmlspecialchars($post['category']); ?>
+                    <?php echo htmlspecialchars($post['category_name'] ?? 'Uncategorized'); ?>
                     <?php if (!empty($post['published_at'])): ?>
                       &middot; <?php echo htmlspecialchars(date('F j, Y', strtotime($post['published_at']))); ?>
+                    <?php endif; ?>
+                    <?php if (!empty($post['author_name'])): ?>
+                      &middot; by <?php echo htmlspecialchars($post['author_name']); ?>
                     <?php endif; ?>
                   </p>
                   <h2 class="h5 blog-card-title"><?php echo htmlspecialchars($post['title']); ?></h2>

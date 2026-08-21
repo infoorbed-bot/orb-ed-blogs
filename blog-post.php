@@ -49,7 +49,13 @@ function extractFaqSchema(string $html): ?array
 
 $slug = isset($_GET['slug']) ? trim($_GET['slug']) : '';
 
-$stmt = $pdo->prepare("SELECT * FROM posts WHERE slug = ? AND status = 'published'");
+$stmt = $pdo->prepare(
+    "SELECT p.*, c.name AS category_name, COALESCE(u.display_name, u.username) AS author_name
+     FROM posts p
+     LEFT JOIN categories c ON c.id = p.category_id
+     LEFT JOIN admin_users u ON u.id = p.author_id
+     WHERE p.slug = ? AND p.status = 'published'"
+);
 $stmt->execute([$slug]);
 $post = $stmt->fetch();
 
@@ -91,7 +97,9 @@ $articleSchema = json_encode([
     'image' => $articleImage,
     'datePublished' => $post['published_at'],
     'dateModified' => $post['updated_at'],
-    'author' => ['@type' => 'Organization', 'name' => 'Orb-Ed'],
+    'author' => !empty($post['author_name'])
+        ? ['@type' => 'Person', 'name' => $post['author_name']]
+        : ['@type' => 'Organization', 'name' => 'Orb-Ed'],
     'publisher' => [
         '@type' => 'Organization',
         'name' => 'Orb-Ed',
@@ -113,7 +121,10 @@ include __DIR__ . '/header.php';
           <h1 class="blog-post-title"><?php echo htmlspecialchars($post['title']); ?></h1>
           <p class="text-muted">
             <?php echo htmlspecialchars(date('F j, Y', strtotime($post['published_at']))); ?>
-            &middot; <?php echo htmlspecialchars($post['category']); ?>
+            &middot; <?php echo htmlspecialchars($post['category_name'] ?? 'Uncategorized'); ?>
+            <?php if (!empty($post['author_name'])): ?>
+              &middot; By <?php echo htmlspecialchars($post['author_name']); ?>
+            <?php endif; ?>
           </p>
 
           <?php if (!empty($post['featured_image'])): ?>

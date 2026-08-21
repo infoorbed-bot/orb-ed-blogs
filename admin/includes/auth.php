@@ -18,3 +18,29 @@ if (empty($_SESSION['admin_id'])) {
     header('Location: login.php');
     exit;
 }
+
+$stmt = $pdo->prepare('SELECT id, username, display_name, role FROM admin_users WHERE id = ?');
+$stmt->execute([$_SESSION['admin_id']]);
+$currentUser = $stmt->fetch();
+
+if (!$currentUser) {
+    // Account was deleted while this session was still active.
+    $_SESSION = [];
+    session_destroy();
+    header('Location: login.php');
+    exit;
+}
+
+function isAdmin(): bool
+{
+    global $currentUser;
+    return $currentUser['role'] === 'admin';
+}
+
+function requireAdmin(): void
+{
+    if (!isAdmin()) {
+        http_response_code(403);
+        die('You need an administrator account to access this page.');
+    }
+}
