@@ -1,6 +1,6 @@
 <?php
-$pageTitle = "O Level and A Level | Online Education at Orb-Ed.pk";
-$pageDescription = "Enroll in O Level & A Level courses with expert tutors at Orb-Ed.pk. Quality online education for students in Pakistan & worldwide. Start learning today!";
+$pageTitle = "O Level & A Level Online Classes in Pakistan | Orb-Ed";
+$pageDescription = "O Level, A Level and MDCAT online classes in Pakistan with recorded lectures, past papers and 24/7 tutor support — for students in Karachi, Lahore, Islamabad and beyond.";
 $showPreloader = true;
 ?>
 <div class="currentpage1 ">

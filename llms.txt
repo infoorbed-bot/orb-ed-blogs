@@ -1,0 +1,24 @@
+# Orb-Ed
+
+> Orb-Ed is an online learning platform for O Level, AS Level, A2 Level, IGCSE, and MDCAT students in Pakistan, offering recorded video lectures, past paper practice, and 24/7 tutor support to students anywhere in the country — including Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Gujranwala, Sialkot, Peshawar, and Hyderabad.
+
+## Courses
+
+- [O Level, A Level & IGCSE Courses](https://orb-ed.pk/courses.php): Full subject catalogue across O Level, AS Level and A2 Level — Economics, Accounting, Mathematics, Additional Mathematics, Biology, Physics, Chemistry, Business Studies, Computer Science, Psychology, Law, Islamiyat, Pakistan Studies, English, Urdu (including Urdu IGCSE) — plus subject bundles and Skill Development courses.
+- [Economics Course Detail](https://orb-ed.pk/economics.php): O Level Economics course structure and content.
+- [About Orb-Ed](https://orb-ed.pk/aboutus.php): What Orb-Ed offers and why students choose online learning over traditional tuition centres.
+- [Study Abroad Services](https://orb-ed.pk/studyabroad.php): Assessments, scholarships, visa guidance and test prep for students applying to universities abroad.
+
+## Blog
+
+- [Blog index](https://orb-ed.pk/blogs.php): Articles on O Level, A Level, IGCSE and MDCAT preparation; city-specific tuition guides for Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Gujranwala, Sialkot, Peshawar and Hyderabad; and study psychology / exam technique.
+- [O Level Online Classes in Pakistan](https://orb-ed.pk/blogs/o-level-online-classes-pakistan)
+- [A Level Online Classes in Pakistan](https://orb-ed.pk/blogs/a-level-online-classes-pakistan)
+- [IGCSE vs O Level: What's the Difference?](https://orb-ed.pk/blogs/igcse-vs-o-level-difference)
+- [MDCAT Online Preparation 2026](https://orb-ed.pk/blogs/mdcat-online-preparation-2026)
+
+## Support
+
+- [FAQs](https://orb-ed.pk/faqs.php): Answers about subjects offered, demo classes, past papers, MDCAT preparation, pricing and enrollment.
+- [Contact Us](https://orb-ed.pk/contact.php)
+- [Careers](https://orb-ed.pk/careers.php)

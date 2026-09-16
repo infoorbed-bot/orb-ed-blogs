@@ -1,9 +1,85 @@
 <?php
-$pageTitle = "O and A Level Courses | Online Classes for All Subjects";
-$pageDescription = "Explore O Level & A Level courses at Orb-Ed.pk. Expert tutors, interactive lessons, and flexible online learning for students in Pakistan and worldwide. Enroll today!";
+$pageTitle = "O Level, A Level & IGCSE Courses Online | Orb-Ed";
+$pageDescription = "Browse O Level, AS Level and A2 Level courses online in Pakistan — Economics, Accounting, Maths, Sciences, Business Studies, Computer Science and more, with recorded lectures and past papers.";
+
+$courseCatalog = [
+    // O Level
+    ['level' => 'O Level', 'name' => 'Economics', 'code' => '2281', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Economics'],
+    ['level' => 'O Level', 'name' => 'Accounting', 'code' => '7707', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Accounting'],
+    ['level' => 'O Level', 'name' => 'Mathematics', 'code' => '4024', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Mathematics'],
+    ['level' => 'O Level', 'name' => 'Biology', 'code' => '5090', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20biology'],
+    ['level' => 'O Level', 'name' => 'Physics', 'code' => '5054', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Physics'],
+    ['level' => 'O Level', 'name' => 'Chemistry', 'code' => '5070', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Chemistry'],
+    ['level' => 'O Level', 'name' => 'Additional Mathematics', 'code' => '4037', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20AddMaths'],
+    ['level' => 'O Level', 'name' => 'Business Studies', 'code' => '7115', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Business%20Studies'],
+    ['level' => 'O Level', 'name' => 'Islamiyat', 'code' => '2058', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Islamiyat'],
+    ['level' => 'O Level', 'name' => 'Pakistan Studies', 'code' => '2059', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Pakistan%20Studies'],
+    ['level' => 'O Level', 'name' => 'Computer Science', 'code' => '2210', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Computer%20Science'],
+    ['level' => 'O Level', 'name' => 'English', 'code' => '1123', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20English'],
+    ['level' => 'O Level', 'name' => 'Urdu', 'code' => '3248', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Urdu%20-%20Sobia%20Abdullah'],
+    ['level' => 'O Level', 'name' => 'Urdu IGCSE', 'code' => '0539', 'url' => 'https://lms.orb-ed.pk/search?title=O%20Level%20-%20Urdu%20-%20Sobia%20Abdullah'],
+    // AS Level
+    ['level' => 'AS Level', 'name' => 'Economics', 'code' => '9708', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Economics'],
+    ['level' => 'AS Level', 'name' => 'Accounting', 'code' => '9706', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Accounting'],
+    ['level' => 'AS Level', 'name' => 'Mathematics', 'code' => '9709', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Mathematics'],
+    ['level' => 'AS Level', 'name' => 'Biology', 'code' => '9700', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Biology'],
+    ['level' => 'AS Level', 'name' => 'Physics', 'code' => '9702', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Physics'],
+    ['level' => 'AS Level', 'name' => 'Chemistry', 'code' => '9701', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Chemistry'],
+    ['level' => 'AS Level', 'name' => 'Psychology', 'code' => '9990', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Psychology'],
+    ['level' => 'AS Level', 'name' => 'Business', 'code' => '9609', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Business'],
+    ['level' => 'AS Level', 'name' => 'Law', 'code' => '9084', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Law'],
+    ['level' => 'AS Level', 'name' => 'English Language', 'code' => '9093', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20English%20Language'],
+    ['level' => 'AS Level', 'name' => 'Computer Science', 'code' => '9618', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Computer%20Science'],
+    ['level' => 'AS Level', 'name' => 'Urdu', 'code' => '8686', 'url' => 'https://lms.orb-ed.pk/search?title=AS%20-%20Urdu'],
+    ['level' => 'AS Level', 'name' => 'Islamic Studies', 'code' => '9488', 'url' => 'https://orb-ed.pk/courses.php'],
+    // A2 Level
+    ['level' => 'A2 Level', 'name' => 'Economics', 'code' => '9708', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Economics'],
+    ['level' => 'A2 Level', 'name' => 'Accounting', 'code' => '9706', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Accounting'],
+    ['level' => 'A2 Level', 'name' => 'Mathematics', 'code' => '9709', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Mathematics'],
+    ['level' => 'A2 Level', 'name' => 'Biology', 'code' => '9700', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Biology'],
+    ['level' => 'A2 Level', 'name' => 'Physics', 'code' => '9702', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Physics'],
+    ['level' => 'A2 Level', 'name' => 'Chemistry', 'code' => '9701', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Chemistry'],
+    ['level' => 'A2 Level', 'name' => 'Psychology', 'code' => '9990', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Psychology'],
+    ['level' => 'A2 Level', 'name' => 'Business', 'code' => '9609', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Business'],
+    ['level' => 'A2 Level', 'name' => 'Law', 'code' => '9084', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Law'],
+    ['level' => 'A2 Level', 'name' => 'English Language', 'code' => '9093', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20English%20Language'],
+    ['level' => 'A2 Level', 'name' => 'Computer Science', 'code' => '9618', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Computer%20Science'],
+    ['level' => 'A2 Level', 'name' => 'Urdu', 'code' => '8686', 'url' => 'https://lms.orb-ed.pk/search?title=A2%20-%20Urdu'],
+    ['level' => 'A2 Level', 'name' => 'Islamic Studies', 'code' => '9488', 'url' => 'https://orb-ed.pk/courses.php'],
+];
+
+$courseSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'ItemList',
+    'itemListElement' => [],
+];
+foreach ($courseCatalog as $i => $course) {
+    $courseSchema['itemListElement'][] = [
+        '@type' => 'ListItem',
+        'position' => $i + 1,
+        'item' => [
+            '@type' => 'Course',
+            'name' => $course['level'] . ' ' . $course['name'],
+            'courseCode' => $course['code'],
+            'url' => $course['url'],
+            'description' => 'Recorded lectures, notes, and past paper practice for ' . $course['level'] . ' ' . $course['name'] . ' on Orb-Ed.',
+            'provider' => [
+                '@type' => 'EducationalOrganization',
+                'name' => 'Orb-Ed',
+                'url' => 'https://orb-ed.pk/',
+            ],
+            'hasCourseInstance' => [
+                '@type' => 'CourseInstance',
+                'courseMode' => 'Online',
+                'courseWorkload' => 'Self-paced',
+            ],
+        ],
+    ];
+}
 ?>
 <div class="currentpage3">
   <?php include('header.php'); ?>
+  <script type="application/ld+json"><?php echo json_encode($courseSchema, JSON_UNESCAPED_SLASHES); ?></script>
   <div class="courpage">
     <section class="course-sec1">
       <div class="smoke-section-parent">
@@ -20,6 +96,7 @@ $pageDescription = "Explore O Level & A Level courses at Orb-Ed.pk. Expert tutor
             <div class="course-intro-copy" style="max-width: 900px; margin: 0 auto 30px;">
               <p>Orb-Ed offers structured, syllabus-aligned online courses for Cambridge O Level, AS Level and A2 Level students in Pakistan and worldwide. Every course pairs recorded video lessons with detailed subject notes, topical and yearly past papers, revision guides, and 24/7 tutor support, so you can prepare for your CAIE exams at your own pace.</p>
               <p>Browse subjects below by level, or explore discounted subject bundles and Soft Skills courses such as MS Excel. Each course card links directly to the full syllabus, video library and past papers for that subject on the Orb-Ed learning platform.</p>
+              <p class="small">New here? Start with <a href="blogs/o-level-online-classes-pakistan">O Level online classes in Pakistan</a>, <a href="blogs/a-level-online-classes-pakistan">A Level online classes in Pakistan</a>, or see <a href="blogs/igcse-vs-o-level-difference">IGCSE vs O Level: what's the difference</a>. Preparing for a medical entry test instead? See our <a href="blogs/mdcat-online-preparation-2026">MDCAT online preparation guide</a>.</p>
             </div>
             <div class="corse-tab">
               <a href=""> Our Courses </a>
